@@ -1,0 +1,12 @@
+li a {
+    color: green;
+}
+
+
+body {
+    background: white url("images/background.jpeg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    
+}
