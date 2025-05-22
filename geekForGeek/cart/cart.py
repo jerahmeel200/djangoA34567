@@ -29,7 +29,7 @@ class Cart:
             product = Product.objects.get(id=product_id)
             item = self.cart[product_id]
             item['product'] = product
-            item['total_price'] = float (item['price']) * item['quanity'] 
+            item['total_price'] = float (item['price']) * item['quantity'] 
             yield item 
             
             
