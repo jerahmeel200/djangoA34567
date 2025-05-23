@@ -2,36 +2,35 @@
 
 {% block content %}
 <div class="container">
-  <h2>Your Cart</h2>
+  <h2 class="mb-4">Confirm Payment</h2>
+
   {% if cart %}
     <table class="table table-bordered">
       <thead>
         <tr>
           <th>Product</th>
-          <th>Quantity</th>
           <th>Price</th>
+          <th>Quantity</th>
           <th>Total</th>
-          <th></th>
         </tr>
       </thead>
       <tbody>
         {% for item in cart %}
           <tr>
             <td>{{ item.product.name }}</td>
+            <td>₦{{ item.product.price }}</td>
             <td>{{ item.quantity }}</td>
-            <td>₦{{ item.price }}</td>
             <td>₦{{ item.total_price }}</td>
-            <td>
-              <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger btn-sm">Remove</a>
-            </td>
           </tr>
         {% endfor %}
       </tbody>
     </table>
 
-    <div class="d-flex justify-content-end gap-2">
-      <a href="{% url 'create_order' %}" class="btn btn-success">Checkout (Without Payment)</a>
-      <a href="{% url 'payment_process' %}" class="btn btn-primary">Pay with Paystack</a>
+    <div class="text-end">
+      <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Proceed to Pay</button>
+      </form>
     </div>
   {% else %}
     <p>Your cart is empty.</p>

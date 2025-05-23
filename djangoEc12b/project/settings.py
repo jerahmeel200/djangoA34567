@@ -45,7 +45,7 @@ INSTALLED_APPS = [
      
 ]
 
-PAYSTACK_SECRET_KEY = 'pk_test_3cf01928f621e1b7ea29fd33b4fd66b32266502a'
+PAYSTACK_SECRET_KEY = 'sk_test_a1f8942ce7d1e77c57949eb4b5f7c5cfd5962f31'
 
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
