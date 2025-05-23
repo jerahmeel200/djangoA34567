@@ -22,4 +22,4 @@ def create_order(request):
 @login_required
 def order_list(request):
     orders = Order.objects.filter(user=request.user)
-    return render(request, 'orders/order_list.html', {'orders': orders})  
+    return render(request, 'orders/order_list.html', {'orders': orders}) 
